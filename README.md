@@ -1,10 +1,9 @@
-# Maze Explorer - C reference project
+# Maze Explorer - C project
 
 DrawApp 5.0 animates a robot solving designed or generated rectangular mazes.
 The default right-wall follower uses only `forward`, `left`, `right`, `atMarker`
 and `canMoveForward`; it receives no map. Optional IDDFS demonstrates repeated
-exploration. This is an AI-assisted learning/model solution (OpenAI Codex,
-November 2026); source comments identify assistance and algorithm references.
+exploration.
 
 Place the course's **unmodified** `graphics.h`, `graphics.c` and
 `drawapp-5.0.jar` beside these sources. They are intentionally excluded from this
