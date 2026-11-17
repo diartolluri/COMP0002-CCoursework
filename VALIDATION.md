@@ -194,3 +194,48 @@ cells reached and 72 revisits. Pause and Play were checked during playback. The
 entire key, dashboard, exit and native controls remain visible; the refreshed
 `docs/drawapp-preview.png` records this final build. The completed viewer is left
 open. The source package remains byte-identical to the final application files.
+
+## 17 November readiness checklist verification
+
+The additional eleven-page requirements/audit PDF was reviewed against the
+current seven-page coursework and five-page DrawApp API guide in Part 1. The
+original coursework text is unchanged. READINESS_AUDIT.md records all 34 IDs,
+T01-T15, exact references, findings, corrective actions and verification evidence.
+
+The existing program passed its baseline tests before changes. The application
+.c/.h files are unchanged in this pass; a working baseline is saved outside the
+source ZIP. Tests now explicitly check inner-wall collisions, read-only sensors,
+adjacent-exit detection, rendered east/south/east headings, same-cell turning,
+and the actual 50x50..2500x1500 DrawApp window limits.
+
+`python3 tools/readiness_audit.py --output build/audit-2026-11-17` passed. It
+records fresh strict -Werror graphical builds through clang and the gcc driver;
+both are Apple Clang 21 here, not two independent compiler implementations.
+`make test`, `make sanitize` and `make package` passed. Twenty additional
+seed/size/loop cases through 101x101 produced 19 distinct layouts, all independently
+validated, reproducible and solved within their explicit 20WH action bounds.
+The largest observed count in that batch was 10,890 actions. JSON and complete
+command/output logs are in build/audit-2026-11-17, outside the final archive.
+
+The README was rendered and visually inspected as plain Markdown on A4 using
+10 pt monospace and 12 pt line height: 636 pt content height fits the 745.89 pt
+text area. docs/readme-one-page.png records the full one-page layout. The source
+ZIP was extracted and built from the README command, checked against current
+sources, scanned for personal paths/name and verified to exclude development
+files and vendor assets. Project graphics.c/h/JAR equal the relocated originals.
+
+A fresh native visual inspection could not be completed: the Java wrappers
+reported cgWindowNotFound, and accessing Finder also failed with macOS
+ScreenCaptureKit SCStreamErrorDomain -3811 (audio/video capture failure).
+At that point T14 was NOT TESTED, and B08/D01/D03/D04 were PARTIAL in the
+matrix. Earlier real-viewer observations/screenshots remain
+available and are not claimed as a newly observed pass. User confirmation of
+the visible entrance, turn, complete layout and exit stop has been requested.
+
+The user subsequently answered "no visual problems" to the requested checks
+after `./run.sh --preset small --delay 100`: full maze fit, inward-facing start,
+clean movement/turns and a stop on the gold exit. This closes T14 and
+B08/D01/D03/D04 as user-confirmed visual evidence. READINESS_AUDIT.md now records
+34 PASS and zero PARTIAL entries. The confirmation is preserved in
+build/audit-2026-11-17/user-visual-confirmation.json. Native agent capture remains
+unavailable; these observations are attributed to the user.

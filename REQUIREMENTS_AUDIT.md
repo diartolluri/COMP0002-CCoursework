@@ -5,6 +5,13 @@ replies supplied in this conversation. This is evidence for the learning/model
 solution, not a grade prediction or certification of a student's own work.
 PDF page numbers below are page positions in the supplied question sheet.
 
+17 November supplement: [READINESS_AUDIT.md](READINESS_AUDIT.md) covers every
+ID A01-A08, B01-B08, C01-C06, D01-D07 and E01-E05 from the additional readiness
+PDF, plus T01-T15 and exact observed evidence. Automated checks passed. The user
+subsequently confirmed no visual problems in the requested small-maze run,
+closing the four visual entries: all 34 IDs now pass. The native capture failure
+is retained as a tooling limitation; user observation is not agent capture.
+
 ## Functional specification
 
 | Requirement | Implementation and evidence |

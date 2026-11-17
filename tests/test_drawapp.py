@@ -64,7 +64,7 @@ def protocol(output):
                   f"Invalid polygon: {line}")
         if op == "SW":
             window = tuple(numbers)
-            check(0 < window[0] <= 1920 and 0 < window[1] <= 1440,
+            check(50 <= window[0] <= 2500 and 50 <= window[1] <= 1500,
                   f"Unexpected window extent: {window}")
         if op == "RG":
             check(all(0 <= value <= 255 for value in numbers), f"Invalid RGB colour: {line}")
@@ -264,6 +264,16 @@ int main(void)
     match = re.search(r"PROBE_CELL (\d+) (\d+) (\d+)", result.stderr)
     check(match is not None, "Missing probe cell geometry")
     px, py, cell = map(int, match.groups())
+    polygons = [values for op, values, _ in commands if op == "FP"]
+    east, south, east_again = polygons[:3]
+    check(east[0] == south[0] == 3 and east == east_again,
+          "Turning right then left should restore the drawn heading")
+    check(east[1] > east[3] == east[5] and south[2] > south[4] == south[6],
+          "Robot triangle must point east initially and south after right()")
+    for polygon in [east, south]:
+        check(all(px - cell <= x <= px and py <= y <= py + cell
+                  for x, y in zip(polygon[1::2], polygon[2::2])),
+              "Turning the robot should keep its drawing in the original square")
     rgb = None
     fills = []
     for op, values, _ in commands:
@@ -272,7 +282,7 @@ int main(void)
     check({(255, 255, 255), (222, 244, 235), (231, 223, 248), (250, 215, 220)} <= set(fills),
           "A visit band was not actually painted on the revisited passage cell")
     check(fills[-1] == (250, 215, 220), "Frequently revisited cell lost its colour")
-    print("PASS renderer observer: initial visit, turns, revisits, final counters, visit colours/key, smooth-frame timing")
+    print("PASS renderer observer: initial visit, drawn heading, turns, revisits, final counters, visit colours/key, smooth-frame timing")
 
 
 def main():

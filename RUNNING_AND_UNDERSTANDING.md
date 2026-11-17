@@ -531,6 +531,7 @@ program. The short README uses direct commands so it works without `run.sh`.
 - `VALIDATION.md`: what has actually been tested and what remains unverified.
 - `TEST_PLAN.md`: the broader acceptance checklist.
 - `REQUIREMENTS_AUDIT.md`: every coursework requirement mapped to code/evidence.
+- `READINESS_AUDIT.md`: the additional 34-ID checklist, verification logs and current limitations.
 
 For reading the implementation, start with `main.c`, then `config.c`, `maze.c`,
 `robot.c`, `solver.c`, and `render.c`. Return to `generator.c` after you understand

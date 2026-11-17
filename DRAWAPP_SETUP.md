@@ -5,7 +5,7 @@ The graphical build uses the course's unmodified `graphics.h`, `graphics.c`, and
 Their originals were provided in:
 
 ```text
-/Users/diartolluri/University Work/COMP0002 - Principles of Programming/drawapp
+/Users/diartolluri/University Work/COMP0002 - Principles of Programming/Part 1/drawapp
 ```
 
 The three project copies are byte-identical to the supplied files and remain

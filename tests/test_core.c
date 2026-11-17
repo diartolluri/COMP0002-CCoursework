@@ -157,6 +157,9 @@ static void testRobot(void)
         Robot *robot = robotCreate(&maze, observe, &trace);
         CHECK(robot != NULL && !atMarker(robot));
         RobotView initial = robotView(robot);
+        CHECK(canMoveForward(robot) && !atMarker(robot));
+        CHECK(samePose(initial, robotView(robot)));
+        CHECK(robotMoves(robot) == 0 && robotTurns(robot) == 0);
         for (int i = 0; i < 4; i++) left(robot);
         CHECK(samePose(initial, robotView(robot)));
         for (int i = 0; i < 4; i++) right(robot);
@@ -177,6 +180,10 @@ static void testRobot(void)
         {
             CHECK(canMoveForward(robot));
             forward(robot);
+            RobotView afterMove = robotView(robot);
+            CHECK(atMarker(robot) == (i == 3));
+            CHECK(samePose(afterMove, robotView(robot)));
+            CHECK(robotMoves(robot) == (size_t)i + 1);
         }
         CHECK(atMarker(robot) && !canMoveForward(robot));
         RobotView atExit = robotView(robot);
@@ -189,6 +196,25 @@ static void testRobot(void)
         mazeDestroy(&maze);
     }
     CHECK(robotCreate(NULL, NULL, NULL) == NULL);
+
+    Maze maze = {0};
+    CHECK(mazeCreate(&maze, 5, 5));
+    maze.entranceX = 0;
+    maze.entranceY = 2;
+    maze.startDirection = EAST;
+    mazeSetTile(&maze, 0, 2, TILE_EMPTY);
+    mazeSetTile(&maze, 1, 2, TILE_EMPTY);
+    Robot *robot = robotCreate(&maze, NULL, NULL);
+    CHECK(robot != NULL && canMoveForward(robot));
+    forward(robot);
+    RobotView beforeWall = robotView(robot);
+    CHECK(!canMoveForward(robot) && !atMarker(robot));
+    CHECK(samePose(beforeWall, robotView(robot)));
+    forward(robot);
+    CHECK(samePose(beforeWall, robotView(robot)));
+    CHECK(robotMoves(robot) == 1 && robotTurns(robot) == 0);
+    robotDestroy(robot);
+    mazeDestroy(&maze);
 }
 
 static Maze corridor(void)

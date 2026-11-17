@@ -66,10 +66,12 @@ Readability and a straightforward working design are explicit marking concerns.
 
 The sheet permits parameters and, where useful, return values for the movement
 functions. The grid may exist in the world implementation for rendering,
-collision detection, validation, and generation. The solver must make movement
-decisions through the robot operations. It must not inspect the grid, consult a
-map built by generation, teleport the robot, or directly alter its coordinates.
-Following the pasted instructor clarification, the plan does not give the solver
+collision detection, validation, and generation. This project's stricter solver
+interface makes movement decisions through the robot operations. It does not
+inspect the grid, consult a map built by generation, teleport the robot, or
+directly alter its coordinates.
+The sheet does not unambiguously forbid all higher-level knowledge or memory.
+Following the pasted instructor clarification, this design does not give the solver
 a discovered-map or visited-cell matrix either.
 
 Counters, local control variables, and recursion are useful for organising a
