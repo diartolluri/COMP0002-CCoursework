@@ -3,7 +3,8 @@
 DrawApp 5.0 animates a robot solving designed or generated rectangular mazes.
 The default right-wall follower uses only `forward`, `left`, `right`, `atMarker`
 and `canMoveForward`; it receives no map. Optional IDDFS demonstrates repeated
-exploration.
+exploration. This learning/model solution includes algorithm references in the
+source comments.
 
 Place the course's **unmodified** `graphics.h`, `graphics.c` and
 `drawapp-5.0.jar` beside these sources. They are intentionally excluded from this

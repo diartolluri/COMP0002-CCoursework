@@ -1,8 +1,6 @@
 #ifndef MAZE_H
 #define MAZE_H
 
-/* AI-assisted reference interfaces: OpenAI Codex, November 2026. */
-
 #include <stddef.h>
 
 enum { MAZE_MIN_SIZE = 5, MAZE_MAX_SIZE = 101 };

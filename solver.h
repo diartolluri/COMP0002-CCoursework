@@ -1,8 +1,6 @@
 #ifndef SOLVER_H
 #define SOLVER_H
 
-/* AI-assisted reference interfaces: OpenAI Codex, November 2026. */
-
 #include <stddef.h>
 #include "robot.h"
 

@@ -1,8 +1,6 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-/* AI-assisted reference interfaces: OpenAI Codex, November 2026. */
-
 #include <stddef.h>
 #include "solver.h"
 

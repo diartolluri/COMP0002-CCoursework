@@ -4,8 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* AI-assisted reference implementation: OpenAI Codex, November 2026.
-   Reachability uses breadth-first search, isolated from the robot solver. */
+/* Reachability uses breadth-first search, isolated from the robot solver. */
 static int fail(char *error, size_t capacity, const char *message)
 {
     if (error != NULL && capacity > 0)

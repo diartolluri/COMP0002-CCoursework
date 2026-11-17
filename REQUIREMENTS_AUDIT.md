@@ -9,7 +9,8 @@ PDF page numbers below are page positions in the supplied question sheet.
 ID A01-A08, B01-B08, C01-C06, D01-D07 and E01-E05 from the additional readiness
 PDF, plus T01-T15 and exact observed evidence. Automated checks passed. The user
 subsequently confirmed no visual problems in the requested small-maze run,
-closing the four visual entries: all 34 IDs now pass. The native capture failure
+closing the four visual entries. The reference edition has 33 technical passes;
+A05 assessed-submission attribution is outside its scope. The native capture failure
 is retained as a tooling limitation; user observation is not agent capture.
 
 ## Functional specification
@@ -55,8 +56,7 @@ successful forward arrival is followed by exit detection before another action.
 - Separate source/header modules; clear owners for allocations; checked failures
   and cleanup; signed coordinates, `size_t` sizes and unsigned masks.
 - Standard `stdio.h` file loading/saving and checked command-line numbers.
-- AI-assisted code is identified in each application source/header file. Non-trivial
-  search/generation references are next to the corresponding implementation.
+- Non-trivial search/generation references are next to their implementation.
 - The expanded dashboard and optional comparison solver make this reference
   larger than the brief's suggested several-hundred-line scale. That suggestion
   is not a stated hard line limit. Further features should justify their size;
@@ -89,7 +89,6 @@ start; it is not claimed for arbitrary interior starts or goals. IDDFS has
 exponential worst-case work and can stop at its action budget. Limits are
 documented instead of being presented as unsolvability or shortest-route claims.
 
-The sheet also requires an assessed submission to be the student's own effort.
-Attribution, technical compliance and successful tests cannot establish that
-requirement for an AI-assisted reference implementation. Moodle upload and the
-submission deadline are administrative actions, not performed by this project.
+This audit describes a reference project. Assessment-specific ownership and
+attribution declarations are outside the scope of this edition. Moodle upload
+and submission deadlines are administrative actions, not performed by this project.

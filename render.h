@@ -1,8 +1,6 @@
 #ifndef RENDER_H
 #define RENDER_H
 
-/* AI-assisted reference interfaces: OpenAI Codex, November 2026. */
-
 #include <stddef.h>
 #include "maze.h"
 #include "robot_internal.h"

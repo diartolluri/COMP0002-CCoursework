@@ -5,7 +5,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-/* AI-assisted reference implementation: OpenAI Codex, November 2026. */
 void printUsage(const char *program)
 {
     printf("Usage: %s [options]\n", program);

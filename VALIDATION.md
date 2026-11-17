@@ -239,3 +239,19 @@ B08/D01/D03/D04 as user-confirmed visual evidence. READINESS_AUDIT.md now record
 34 PASS and zero PARTIAL entries. The confirmation is preserved in
 build/audit-2026-11-17/user-visual-confirmation.json. Native agent capture remains
 unavailable; these observations are attributed to the user.
+
+## Reference-edition label cleanup
+
+At the user's request, descriptive creation labels were removed from all 14
+application source/header files and the current introductory documentation.
+Algorithm and textbook references remain. Comparison with the separately
+preserved baseline confirms unchanged application logic after ignoring comments
+and whitespace. Earlier snapshots and their historical diff are stored outside
+the active project in /private/tmp/c-coursework-reference-label-backup-2026-11-17.
+
+`make test` and `make package` passed after cleanup; their logs are in
+build/reference-refresh-tests.log and build/reference-refresh-package.log.
+The rebuilt source ZIP matches current files and contains no creation labels.
+The README page preview was regenerated. The reference-edition audit now has
+33 technical PASS entries; assessment-specific attribution item A05 is recorded
+as NOT ASSESSED, rather than retaining an inaccurate submission-compliance claim.

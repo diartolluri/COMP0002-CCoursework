@@ -2,8 +2,7 @@
 #include <limits.h>
 #include <stdlib.h>
 
-/* AI-assisted reference implementation: OpenAI Codex, November 2026.
-   Failed IDDFS branches restore their entry pose; frames hold no maze map. */
+/* Failed IDDFS branches restore their entry pose; frames hold no maze map. */
 /* Algorithm: Russell/Norvig, AIMA, chapter 3, iterative deepening.
    https://aima.cs.berkeley.edu/4th-ed/pdfs/newchap03.pdf */
 typedef struct Frame

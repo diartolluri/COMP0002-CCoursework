@@ -6,7 +6,6 @@
 #include "render.h"
 #include "robot_internal.h"
 #include "solver.h"
-/* AI-assisted reference implementation: OpenAI Codex, November 2026. */
 
 int main(int argc, char **argv)
 {

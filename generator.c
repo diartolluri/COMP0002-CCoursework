@@ -3,7 +3,6 @@
 #include <stdint.h>
 #include <stdio.h>
 
-/* AI-assisted reference implementation: OpenAI Codex, November 2026. */
 /* Algorithm background: Jamis Buck, Maze Generation: Recursive Backtracking.
    https://weblog.jamisbuck.org/2010/12/27/maze-generation-recursive-backtracking */
 /* LCG parameters: Press et al., Numerical Recipes in C, 2nd ed., section 7.1. */

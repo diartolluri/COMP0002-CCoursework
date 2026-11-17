@@ -3,8 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* AI-assisted reference implementation: OpenAI Codex, November 2026.
-   Exploration marks are display state only; the solver cannot access them. */
+/* Exploration marks are display state only; the solver cannot access them. */
 
 static size_t cellIndex(const Renderer *renderer, int x, int y)
 {

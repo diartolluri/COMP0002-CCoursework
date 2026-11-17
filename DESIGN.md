@@ -1,6 +1,6 @@
 # Design and evidence for the reference implementation
 
-This is a learning/model solution, developed with OpenAI Codex in November 2026.
+This learning/model solution demonstrates the coursework robot abstraction.
 The coursework's own-work and attribution rules remain relevant to any later
 assessed use. No mark is predicted: the rubric rewards appropriate design, clarity,
 working behaviour, novelty, and quality, rather than a count of language features.

@@ -1,6 +1,5 @@
 #include "robot_internal.h"
 #include <stdlib.h>
-/* AI-assisted reference implementation: OpenAI Codex, November 2026. */
 
 struct Robot
 {
