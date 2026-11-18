@@ -1,0 +1,8 @@
+/build/
+/a.out
+/drawapp-*.jar
+/drawapp-*.zip
+/graphics.c
+/graphics.h
+.DS_Store
+/.runtime/
